@@ -9,6 +9,7 @@
 <% for entry in @entries %>
   <tr>
     <td><%=h entry.project.full_name %></td>
+    <td><%=h entry.user_id %></td>
     <td><%=h entry.date %></td>
     <td><%= link_to 'Show', entry %></td>
     <td><%= link_to 'Edit', edit_entry_path(entry) %></td>

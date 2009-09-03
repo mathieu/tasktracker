@@ -4,8 +4,8 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :project %><br />
-    <%= f.text_field :project %>
+    <%= f.label :project%>
+    <%= collection_select(:entry, :project_id, Project.all, :id, :full_name, {:prompt => true}) %>
   </p>
   <p>
     <%= f.label :date %><br />

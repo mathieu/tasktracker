@@ -41,7 +41,7 @@ class EntriesController < ApplicationController
   # POST /entries.xml
   def create
     @entry = Entry.new(params[:entry])
-
+    @entry.user_id = session[:user_id]
     respond_to do |format|
       if @entry.save
         flash[:notice] = 'Entry was successfully created.'

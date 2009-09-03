@@ -4,12 +4,21 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Entries</th>
   </tr>
 
 <% for project in @projects %>
   <tr>
     <td><%=h project.name %></td>
     <td><%=h project.description %></td>
+    <td>
+      <table>
+        <% for entry in project.entries%>
+          <tr><td><%=h entry.date%></td></tr>
+        <%end%>
+       </table>
+    </td>
+
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
